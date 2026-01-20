@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header{
+    text-align: center;
+    background-color: green;
+    position: sticky;
+}
+
+header img{
+    height: 10rem;
+    width: 15rem;
+}
+
+footer{
+    display: flex;
+}
+
+Redes{
+    justify-content: right;
+
+}
+footer img{
+    height: 5rem;
+    width: 2rem;
+}
