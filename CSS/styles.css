@@ -4,26 +4,125 @@
   box-sizing: border-box;
 }
 
-header{
-    text-align: center;
-    background-color: green;
-    position: sticky;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-header img{
+body{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+header {
+    background-color: green;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+}
+
+header img {
     height: 10rem;
     width: 15rem;
+    object-fit: contain;
+    margin-top: 10px;
+}
+
+.navegacion {
+    background-color: greenyellow;
+    padding: 15px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.navegacion ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.navegacion a:hover {
+    color: #ff4500;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+#1{
+    flex: 1;
 }
 
 footer{
+   background-color: green;
+   color: white;
+   padding: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+footer div {
+    flex: 1 1 300px; /* Intenta que midan 300px, si no hay espacio, se estiran o encogen */
+    text-align: center;
+}
+
+.Redes{
     display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+}
+.Redes img{
+    width: 30px;
+    height: 30px;
 }
 
-Redes{
-    justify-content: right;
+/*----------------------------------------------------------------------------------------*/
 
+/* --- ESTILOS PARA MÓVILES --- */
+@media (max-width: 768px) {
+    
+    /* Se reducxe un poco el tamaño del logo para que no ocupe toda la pantalla */
+    header img {
+        width: 12rem;
+        height: 8rem;
+    }
+
+    /* El menú de navegación se distribuye de fila a columna para que sea fácil tocar con el dedo */
+    .navegacion ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    /* Los elementos se apilan para que no se amontonen */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* Cada parte del footer ocupa el ancho completo */
+    footer div {
+        flex: 1 1 100%;
+    }
 }
-footer img{
-    height: 5rem;
-    width: 2rem;
-}
+
+/* Pongo comentarios @media nada más porque al ser algo nuevo se me complica un poco*/
