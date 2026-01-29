@@ -13,48 +13,84 @@
 <body>
     <header>
         <h1> Piscolabis Campito </h1>
-        <img src="img/tomato-7772136_1280.jpg" alt="">
+        <img src="img/43d4a9c5-408d-48a1-a3a4-a64cc387863f-removebg-preview.png" alt="">
     </header>
 
     <nav class="navegacion">
-        <ul>
-            <li><a href="#Inicio"> Inicio </a> </li>
-            <li><a href="#Carta"> Carta </a> </li>
-            <li><a href="#Pedir"> Pedir </a> </li>
-            <li><a href="#Reservar"> Reservar </a> </li>
+        <ul class="contenido-menu">
+            <li>
+                <a href="#Inicio">
+                    <div class="contendeor-imagen">
+                        <img src="img/hogar.png" alt="Inicio" class="imagen-icono">
+                    </div>
+                    <span class="text-link"> Inicio </span>
+                </a>
+            </li>
+            <li>
+                <a href="#Carta">
+                    <div class="contendeor-imagen">
+                        <img src="img/aplicaciones.png" alt="Carta" class="imagen-icono">
+                    </div>
+                    <span class="text-link"> Carta </span>
+                </a>
+            </li>
+            <li>
+                <a href="#Pedir">
+                    <div class="contendeor-imagen">
+                        <img src="img/carrito-de-compras.png" alt="Pedir" class="imagen-icono">
+                    </div>
+                    <span class="text-link"> Pedir </span>
+                </a>
+            </li>
+            <li>
+                <a href="#Reservar">
+                    <div class="contendeor-imagen">
+                        <img src="img/lineas-de-calendario.png" alt="Reservar" class="imagen-icono">
+                    </div>
+                    <span class="text-link"> Reservar </span>
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <div class="miSliderCampito">
-            
-        <div class="swiper-slide slide-oferta" style="background-image: url('img/tomato-7772136_1280.jpg');">
-            <div class="contenido-slide">
-                    <h2>¡Jueves de Papas Locas!</h2>
-                    <p>2x1 en todas nuestras especialidades.</p>
-                    <a href="#pedir" class="btn-slide">Ver Oferta</a>
-            </div>
-        </div>
+    <main class="contenido-principal">
 
-        <div class="swiper-slide slide-oferta" style="background-image: url('img/tomato-7772136_1280.jpg');">
-            <div class="contenido-slide">
-                    <h2>Nuevo: El "Campito Gigante"</h2>
-                    <p>¿Te atreves con nuestro bocadillo de medio metro?</p>
-                    <a href="#carta" class="btn-slide">Ver Carta</a>
-            </div>
-        </div>
+        <div class="swiper miSliderCampito">
 
-        <div class="swiper-slide slide-oferta" style="background-image: url('img/tomato-7772136_1280.jpg');">
-            <div class="contenido-slide">
-                    <h2>Reserva tu mesa</h2>
-                    <p>Segura tu sitio para el fin de semana.</p>
-                    <a href="#reservar" class="btn-slide">Rservar</a>
-            </div>
-        </div>
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide slide-oferta" style="background-image: url('img/tomato-7772136_1280.jpg');">
+                    <div class="contenido-slide">
+                            <h2>¡Jueves de Papas Locas!</h2>
+                            <p>2x1 en todas nuestras especialidades.</p>
+                            <a href="#pedir" class="btn-slide">Ver Oferta</a>
+                    </div>
+                </div>
 
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div> 
+                <div class="swiper-slide slide-oferta" style="background-image: url('img/tomato-7772136_1280.jpg');">
+                    <div class="contenido-slide">
+                            <h2>Nuevo: El "Campito Gigante"</h2>
+                            <p>¿Te atreves con nuestro bocadillo de medio metro?</p>
+                            <a href="#carta" class="btn-slide">Ver Carta</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide-oferta" style="background-image: url('img/tomato-7772136_1280.jpg');">
+                    <div class="contenido-slide">
+                            <h2>Reserva tu mesa</h2>
+                            <p>Segura tu sitio para el fin de semana.</p>
+                            <a href="#reservar" class="btn-slide">Rservar</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div> 
+    
+    </main>
 
     <footer>
         <div class="Contacto">
@@ -64,8 +100,15 @@
             <p>El Agazal 43, 35468 Gáldar, Las Palmas, España.</p>
         </div>
         <div class="Redes">
-            <img src="img/tomato-7772136_1280.jpg" alt="">
-            <img src="img/tomato-7772136_1280.jpg" alt="">
+            <a href="https://www.instagram.com/piscolabiscampitos/?hl=es" target="_blank" rel="noopener noreferrer">
+                <img src="img/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://www.instagram.com/TU_PERFIL" target="_blank" rel="noopener noreferrer">
+                <img src="img/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@rauuog_06" target="_blank" rel="noopener noreferrer">
+                <img src="img/tik-tok.png" alt="TikTok">
+            </a>
         </div>
     </footer>
 
