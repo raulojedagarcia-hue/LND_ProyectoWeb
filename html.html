@@ -13,14 +13,26 @@
 <body>
     <header>
         <h1> Piscolabis Campito </h1>
-        <img src="img/43d4a9c5-408d-48a1-a3a4-a64cc387863f-removebg-preview.png" alt="">
+        <img src="img/43d4a9c5-408d-48a1-a3a4-a64cc387863f-removebg-preview.png" alt="Logo">
+
+        <div class="reproductor-musica">
+            <audio id="miMusica" loop>
+                <source src="audio/P!NK - So What (Lyrics).mp3" type="audio/mpeg">
+            </audio>
+
+            <span id="estado-musica"> MÚSICA APAGADA </span>
+
+            <button onclick="controlarMusica()" id="boton-play">
+                <div class="icono-play"></div>
+            </button>
+        </div>
     </header>
 
     <nav class="navegacion">
         <ul class="contenido-menu">
             <li>
                 <a href="#Inicio">
-                    <div class="contendeor-imagen">
+                    <div class="contenedor-imagen">
                         <img src="img/hogar.png" alt="Inicio" class="imagen-icono">
                     </div>
                     <span class="text-link"> Inicio </span>
@@ -166,6 +178,72 @@
                         </div>
                     </div>
                 </div>
+                <div class="super-tarjeta-pizzas">
+                    <div class="cabeceraPizzas">
+                        <img src="img/tomato-7772136_1280.jpg" alt="pizzas" class="imagen-pizzas">
+                        <div class="overlay-pizzas">
+                            <h2> Nuestras 11 pizzas artesanales </h2>
+                            <span> Toca para ver la variedad </span>
+                        </div>
+                    </div>
+                    <div class="grid-interno-pizzas">
+                        <div class="item-pizzas">
+                            <h4> Margarita </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Campeona </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Marinera </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Vegetariana </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Cuatro estaciones </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Atún </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> De la casa </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Campitos </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Mario </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Barbacoa </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Romarey </h4>
+                            <span> Ingredientes </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     
@@ -211,8 +289,33 @@
                 prevEl: ".swiper-button-prev",
             },
         });
-    </script> 
+    </script>
 
+    <script>
+        function controlarMusica() {
+    const musica = document.getElementById('miMusica');
+    const reproductor = document.getElementById('reproductor');
+    const texto = document.getElementById('estado-musica');
+    const icono = document.getElementById('icono');
+
+    if (musica.paused) {
+        musica.play().then(() => {
+            reproductor.classList.add('musica-activa');
+            texto.innerText = "MÚSICA ON";
+            // Cambiamos el icono a pausa (dos barritas)
+            icono.style.border = "none";
+            icono.innerHTML = '<div style="width:10px; height:10px; border-left:3px solid #1a1a1a; border-right:3px solid #1a1a1a;"></div>';
+        }).catch(error => {
+            alert("Error: Revisa que el archivo 'audio/musica.mp3' existe en tu carpeta.");
+        });
+    } else {
+        musica.pause();
+        reproductor.classList.remove('musica-activa');
+        texto.innerText = "MÚSICA OFF";
+        icono.innerHTML = ''; // Volver al triángulo (puedes resetear el estilo CSS aquí)
+        location.reload(); // Truco rápido para resetear el icono del play
+    }
+    </script>
 </body>
 
 </html>
