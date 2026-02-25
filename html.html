@@ -7,6 +7,8 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 
@@ -40,23 +42,24 @@
             </li>
             <li>
                 <a href="#Carta">
-                    <div class="contendeor-imagen">
+                    <div class="contenedor-imagen">
                         <img src="img/aplicaciones.png" alt="Carta" class="imagen-icono">
                     </div>
                     <span class="text-link"> Carta </span>
                 </a>
             </li>
             <li>
-                <a href="#Pedir">
-                    <div class="contendeor-imagen">
+                <a href="javascript:void(0)" onclick="toggleCart()">
+                    <div class="contenedor-imagen">
                         <img src="img/carrito-de-compras.png" alt="Pedir" class="imagen-icono">
+                        <span id="cart-count"> 0 </span>
                     </div>
                     <span class="text-link"> Pedir </span>
                 </a>
             </li>
             <li>
-                <a href="#Reservar">
-                    <div class="contendeor-imagen">
+                <a href="#Reservar" onclick="abrirReserva()">
+                    <div class="contenedor-imagen">
                         <img src="img/lineas-de-calendario.png" alt="Reservar" class="imagen-icono">
                     </div>
                     <span class="text-link"> Reservar </span>
@@ -111,7 +114,38 @@
                     <div class="capa-informacion">
                         <div class="texto-oculto">
                             <h3> Bocadillos </h3>
-                            <p> Información </p>
+                            <div class="lista-productos">
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Todo (escarola, tomate, jamón, queso y alioli + carne) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 3.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Bocadillo Todo', 3.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Especial (Todo + huevo frito) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 4.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Bocadillo Especial', 4.0, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Vegetal (escarola, tomate, huevo sancochado y mayonesa) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 3.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Bocadillo Vegetal', 3.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Jamón y queso </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 2.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Bocadillo Mixto', 2.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Vegetal, jamón y queso </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 2.75€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Bocadillo VJQ', 2.75, 5)"> + </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,7 +154,38 @@
                     <div class="capa-informacion">
                         <div class="texto-oculto">
                             <h3> Sandwiches </h3>
-                            <p> Información </p>
+                            <div class="lista-productos">
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Mixto </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 2.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Sandwich Mixto', 2.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Vegetal (escarola, tomate, huevo sancochado y mayonesa) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 3.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Sandwich Vegetal', 3.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Campitos (3 capas, vegetal, cebolla, atún y millo, jamón, queso y tortilla francesa) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 5.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Campitos', 5.0, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Campitos + carne </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 6.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Campitos Carne', 6.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Avestruz (campitos + pechuga, lomo y salchicha) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 7.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Avestruz', 7.50, 5)"> + </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -129,7 +194,31 @@
                     <div class="capa-informacion">
                         <div class="texto-oculto">
                             <h3> Hamburguesas </h3>
-                            <p> Información </p>
+                            <div class="lista-productos">  
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Normal (Ketchup, mostaza y cebolla) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 4.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Hamburguesa Normal', 4.0, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Todo (escarola, tomate, cebolla, jamón, queso y salsas) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 5.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Hamburguesa Todo', 5.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Especial (todo + huevo frito) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 7.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Hamburguesa Especial', 7.0, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Carnes </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="item-carnes"> Ternera y Pollo </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -138,7 +227,26 @@
                     <div class="capa-informacion">
                         <div class="texto-oculto">
                             <h3> Perritos </h3>
-                            <p> Información </p>
+                            <div class="lista-productos">  
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Normal (Ketchup, mostaza, alioli y cebolla) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 2.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Perrito Normal', 2.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Especial (cebolla, jamón, queso, orégano y salsas) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 4.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Perrito Especial', 4.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Especial tortilla (especial + tortilla francesa) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 6.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Perrito Especial Tortilla', 6.0, 5)"> + </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -147,7 +255,20 @@
                     <div class="capa-informacion">
                         <div class="texto-oculto">
                             <h3> Americanos </h3>
-                            <p> Información </p>
+                            <div class="lista-productos">  
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Americano (escarola, tomate, huevo sancochado, jamón, queso y alioli) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 4.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Americano', 4.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Americano con carne </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 6.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Americano Carne', 6.00, 5)"> + </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -156,7 +277,38 @@
                     <div class="capa-informacion">
                         <div class="texto-oculto">
                             <h3> Croissants </h3>
-                            <p> Información </p>
+                            <div class="lista-productos">
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Vegetal (escarola, tomate, huevo sancochado y mayonesa) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 5.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Croissant Vegetal', 5.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Vegetal, jamón y queso </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 4.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Croissant VJQ', 4.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Carne </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 4.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Croissant Carne', 4.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Todo (escarola, tomate, jamón, queso y alioli) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 6.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Croissant Todo', 6.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Especial (todo + huevo frito) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 7.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Croissant Especial', 7.50, 5)"> + </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -165,7 +317,98 @@
                     <div class="capa-informacion">
                         <div class="texto-oculto">
                             <h3> Comida </h3>
-                            <p> Información </p>
+                            <div class="lista-productos">
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Pechuga de pollo </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Pechuga de Pollo', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Vueltas de ternera</span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Vueltas de Ternera', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Lomo de cerdo </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Lomo de Cerdo', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Carne de cochino </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Carne de cochino', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Pollo </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Pollo', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Calamares </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Calamares', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Alitas de pollo </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Alitas de Pollo', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Croquetas </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Croquetas', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Queso semicurado </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Queso Semicurado', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Ensalada </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Ensalada', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Viernes chico (queso semicurado, papas y mojo) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Viernes Chico', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Ensaladilla rusa </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Ensaladilla Rusa', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Queso frito </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Queso Frito', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Tacos de pollo </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Tacos de Pollo', 0.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Pechuga empanada </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 0.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Pechuga Empanada', 0.00, 5)"> + </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -174,7 +417,41 @@
                     <div class="capa-informacion">
                         <div class="texto-oculto">
                             <h3> Papas </h3>
-                            <p> Información </p>
+                            <div class="lista-productos">
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Cono </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 3.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Cono Papas', 3.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Cono con salchichas </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 3.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Cono Salchicha', 3.50, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Medias o Raciones </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Papas </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 4.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Papas', 4.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Papas con jamón y queso </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 5.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Papas JQ', 5.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Papas pizza (jamón, queso, atún y orégano) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 6.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Papas Pizza', 6.50, 5)"> + </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -182,65 +459,208 @@
                     <div class="cabeceraPizzas">
                         <img src="img/tomato-7772136_1280.jpg" alt="pizzas" class="imagen-pizzas">
                         <div class="overlay-pizzas">
-                            <h2> Nuestras 11 pizzas artesanales </h2>
+                            <h2> Nuestras 12 pizzas artesanales </h2>
                             <span> Toca para ver la variedad </span>
                         </div>
                     </div>
                     <div class="grid-interno-pizzas">
                         <div class="item-pizzas">
                             <h4> Margarita </h4>
-                            <span> Ingredientes </span>
+                            <span> Tomate, queso y orégano </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Margarita', 10, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> Campeona </h4>
-                            <span> Ingredientes </span>
+                            <span> Atún, salchicha, bacon y gambas </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Campeona', 12, 20)">
+                                Añadir al pedido
+                            </button>
+                        </div>
+                        <div class="item-pizzas">
+                            <h4> Atún y jamón </h4>
+                            <span> Atún y jamón :D </span>
+                            <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Campeona', 12, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> Marinera </h4>
-                            <span> Ingredientes </span>
+                            <span> Atún, gambas, cangrejo y mejillones </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Marinera', 14, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> Vegetariana </h4>
-                            <span> Ingredientes </span>
+                            <span> Cebolla, champiñones, pimientos, calabacines y aceitunas </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Vegetariana', 16, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> Cuatro estaciones </h4>
-                            <span> Ingredientes </span>
+                            <span> Jamón, atún, champiñones y gambas </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Cuatro estaciones', 18, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> Atún </h4>
-                            <span> Ingredientes </span>
+                            <span> Atún, millo, jamón, piña </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Atún', 20, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> De la casa </h4>
-                            <span> Ingredientes </span>
+                            <span> Atún, jamón, champiñones, cebolla, bacon, salchicha y huevo </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('De la casa', 22, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> Campitos </h4>
-                            <span> Ingredientes </span>
+                            <span> Calabacines, salchichas, bacon, atún y pimiento </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Campitos', 24, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> Mario </h4>
-                            <span> Ingredientes </span>
+                            <span> Atún, jamón, millo, piña, cebolla, tomate natural, gambas y huevo </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Mario', 26, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> Barbacoa </h4>
-                            <span> Ingredientes </span>
+                            <span> Bacon, salchicha, cebolla y salsa BBQ </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Barbacoa', 28, 20)">
+                                Añadir al pedido
+                            </button>
                         </div>
                         <div class="item-pizzas">
                             <h4> Romarey </h4>
-                            <span> Ingredientes </span>
+                            <span> Dátiles y bacon </span>
                             <b class="precio-pizza"> 1000€ </b>
+                            <button class="btn-add-cart" onclick="agregarAlCarrito('Romarey', 30, 20)">
+                                Añadir al pedido
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="categoria">
+                    <img src="img/tomato-7772136_1280.jpg" alt="Pan de ajo" class="imagen-portada">
+                    <div class="capa-informacion">
+                        <div class="texto-oculto">
+                            <h3> Pan de ajo </h3>
+                            <div class="lista-productos">
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Pan de ajo </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 1.20€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Pan de Ajo', 1.20, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Pan de ajo con queso </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 1.4€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Pan de Ajo Queso', 1.40, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Pan de ajo, jamón y queso </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 1.60€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Pan de Ajo JQ', 1.60, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Pan viga (pan de ajo, atún, jamón, queso, cebolla y huevo sancochado) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 3.00€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Pan Viga', 3.00, 5)"> + </button>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Pan Mari (pan de ajo, atún y gambas) </span>
+                                    <div class="puntos-separador"></div>
+                                    <span class="precio-item"> 2.50€ </span>
+                                    <button class="btn-mini-add" onclick="agregarAlCarrito('Pan Mari', 2.50, 5)"> + </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="categoria">
+                    <img src="img/tomato-7772136_1280.jpg" alt="Fuera de carta" class="imagen-portada">
+                    <div class="capa-informacion">
+                        <div class="texto-oculto">
+                            <h3> Fuera de carta </h3>
+                            <div class="lista-productos">
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Preguntar en el local </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Pechuga al horno </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Secreto duroc </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Escalope </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Burritos </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="categoria">
+                    <img src="img/tomato-7772136_1280.jpg" alt="Bebidas" class="imagen-portada">
+                    <div class="capa-informacion">
+                        <div class="texto-oculto">
+                            <h3> Bebidas </h3>
+                            <p> Información </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="categoria">
+                    <img src="img/tomato-7772136_1280.jpg" alt="Postres" class="imagen-portada">
+                    <div class="capa-informacion">
+                        <div class="texto-oculto">
+                            <h3> Postres </h3>
+                            <div class="lista-productos">
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Orientativo. Pedir en el local </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Caseros </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Polcito Uruguayo </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Tarta de tres chocolates </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Helados variados </span>
+                                </div>
+                                <div class="item-menu-tarjeta">
+                                    <span class="nombre-item"> Chuches y chocolatinas </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -269,6 +689,86 @@
         </div>
     </footer>
 
+    <div id="modalReserva" class="modal">
+        <div class="contenidoModal">
+            <span class="cerrar-modal" onclick="cerrarReserva()">&times;</span>
+
+            <div class="headerFormulario">
+                <h3> Reserva tu mesa </h3>
+                <p> Piscolabis Campitos </p>
+            </div>
+
+            <form id="formReserva">
+                <div class="grupo-input">
+                    <label> Nombre Completo </label>
+                    <input type="text" placeholder="Ej: Pene" required>
+                </div>
+
+                <div class="fila-input">
+                    <div class="grupo-input">
+                        <label> Fecha </label>
+                        <input type="date" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label> Hora </label>
+                        <input type="time" required>
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <label> Número de personas </label>
+                    <input type="number" min="1" max="20" placeholder="1" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label> Teléfono de contacto </label>
+                    <input type="tel" placeholder="617 090 707" required>
+                </div>
+
+                <button type="submit" class="btn-enviar"> Confirmar Reserva </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="side-cart" class="cart-sidebar">
+        <div class="cart-header">
+            <h3> Tu Pedido </h3>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+
+        <div id="cart-items" class="cart-body">
+            <p class="empty-msg"> Tu carrito esta vacío </p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span> Total a pagar: </span>
+                <span id="total-price"> 0.00€ </span>
+            </div>
+
+            <div class="comentarios-seccion">
+                <label> ¿Algún cambio? (Ej. sin cebolla) </label>
+                <textarea id="order-comments" placeholder="Escribe aquí..."></textarea>
+            </div>
+
+            <p class="pago-aviso"> ⚠️ Pago en local (Efectivo o tarjeta) ⚠️ </p>
+            <button onclick="finalizarPedido()" class="btn-finalizar"> REALIZAR PEDIDO </button>
+        </div>
+    </div>
+
+    <div id="order-success" class="modal-success">
+        <div class="success-content">
+            <div class="check-icon"> ✓ </div>
+            <h2> ¡Pedido en cocina! </h2>
+            <div class="info-orden">
+                <p> Orden: <strong id="order-num"> #000 </strong></p>
+                <p> Tiempo aproximado: <strong id="order-time"> -- min </strong></p>
+            </div>
+            <p class="nota-recogida"> Paga al recoger en el Piscolabis </p>
+            <button onclick="cerrarSuccess()" class="btn-cerrar-success"> ENTENDIDO </button>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"> </script>
 
     <script>
@@ -293,28 +793,120 @@
 
     <script>
         function controlarMusica() {
-    const musica = document.getElementById('miMusica');
-    const reproductor = document.getElementById('reproductor');
-    const texto = document.getElementById('estado-musica');
-    const icono = document.getElementById('icono');
+            const musica = document.getElementById('miMusica');
+            const texto = document.getElementById('estado-musica');
+            const boton = document.getElementById('boton-play');
 
-    if (musica.paused) {
-        musica.play().then(() => {
-            reproductor.classList.add('musica-activa');
-            texto.innerText = "MÚSICA ON";
-            // Cambiamos el icono a pausa (dos barritas)
-            icono.style.border = "none";
-            icono.innerHTML = '<div style="width:10px; height:10px; border-left:3px solid #1a1a1a; border-right:3px solid #1a1a1a;"></div>';
-        }).catch(error => {
-            alert("Error: Revisa que el archivo 'audio/musica.mp3' existe en tu carpeta.");
-        });
-    } else {
-        musica.pause();
-        reproductor.classList.remove('musica-activa');
-        texto.innerText = "MÚSICA OFF";
-        icono.innerHTML = ''; // Volver al triángulo (puedes resetear el estilo CSS aquí)
-        location.reload(); // Truco rápido para resetear el icono del play
-    }
+            if (musica.paused) {
+                musica.play().then(() => {
+                    texto.innerText = "MÚSICA ON";
+                    boton.innerHTML = `
+                        <div style="display:flex; gap:3px;">
+                            <div style="width:4px; height:12px; background:#1a1a1a; border-radius:2px;"></div>
+                            <div style="width:4px; height:12px; background:#1a1a1a; border-radius:2px;"></div>
+                        </div>`;
+                });
+            } else {
+                musica.pause();
+                texto.innerText = "MÚSICA OFF";
+                boton.innerHTML = '<div class="icono-play"></div>';
+            }
+        }
+    </script>
+
+    <script>
+        function abrirReserva() {
+            document.getElementById("modalReserva").style.display = "block";
+        }
+
+        function cerrarReserva() {
+            document.getElementById("modalReserva").style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            let modal = document.getElementById("modalReserva");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+    </script>
+
+    <script>
+        let carrito = [];
+
+        function agregarAlCarrito(nombre, precio, tiempo) {
+            carrito.push({ nombre, precio, tiempo });
+            actualizarCarritoUI();
+            //Esto sobra, pero es para que el carrito se abra solo al añadir algo
+            if(!document.getElementById('side-cart').classList.contains('open')){
+                toggleCart();
+            }
+        }
+
+        function actualizarCarritoUI() {
+            const listado = document.getElementById('cart-items');
+            const totalElem = document.getElementById('total-price');
+            const countElem = document.getElementById('cart-count');
+
+            listado.innerHTML = '';
+            let total = 0;
+
+            if (carrito.length === 0) {
+                listado.innerHTML = '<P class="empty-msg">Tu bolsa está vacía</p>';
+            }
+
+            carrito.forEach((prod, index) => {
+                total += prod.precio;
+                listado.innerHTML += `
+                    <div style="display:flex; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid #333; padding-bottom:10px;">
+                        <div>
+                            <div style="font-weight:bold;">${prod.nombre}</div>
+                            <div style="font-size:0.8rem; color:greenyellow;">${prod.precio}€</div>
+                        </div>
+                        <button onclick="eliminarItem(${index})" style="background:none; border:none; color:red; cursor:pointer;">Eliminar</button>
+                    </div>
+                `;
+            });
+
+            totalElem.innerText = total.toFixed(2) + '€';
+            countElem.innerText = carrito.length;
+        }
+
+        function eliminarItem(index) {
+            carrito.splice(index, 1);
+            actualizarCarritoUI();
+        }
+
+        function toggleCart() {
+            document.getElementById('side-cart').classList.toggle('open');
+        }
+
+        function finalizarPedido() {
+            if (carrito.length === 0) return alert("¡El carrito está vacío!");
+
+            let tiempoAcumulado = 0;
+            carrito.forEach(p => {
+                tiempoAcumulado += p.tiempo;
+            });
+
+            let numOrden = Math.floor(Math.random() * 900) + 100;
+
+            document.getElementById('order-num').innerText = "#" + numOrden;
+            document.getElementById('order-time').innerText = tiempoAcumulado + " min";
+            document.getElementById('order-success').style.display = "flex";
+
+            carrito = [];
+            document.getElementById('order-comments').value = '';
+            actualizarCarritoUI();
+            toggleCart();
+        }
+
+        function cerrarSuccess() {
+            document.getElementById('order-success').style.display = 'none';
+        }
+
+
     </script>
 </body>
 
