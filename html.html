@@ -68,7 +68,7 @@
         </ul>
     </nav>
 
-    <main class="contenido-principal">
+    <main id="Inicio" class="contenido-principal">
 
         <div class="swiper miSliderCampito">
 
@@ -730,6 +730,20 @@
         </div>
     </div>
 
+    <div id="reserva-success" class="modal-success">
+        <div class="success-content">
+            <div class="check-icon"> ✓ </div>
+            <h2> ¡Mesa Reservada! </h2>
+            <div class="info-orden">
+                <p> Hola <strong id="res-nombre-confirm"> </strong>, </p>
+                <p> Tu mesa para <strong id="res-personas-confirm"> </strong> personas está lista. </p>
+                <p> Te esperamos el día <strong id="res-fecha-confirm"> </strong> a las <strong id="res-hora-confirm"> </strong>. </p>
+            </div>
+            <p class="nota-recogida"> Por favor, llega 5 minutos antes. ¡Gracias! </p>
+            <button onclick="cerrarReservaSuccess()" class="btn-cerrar-success"> ENTENDIDO </button>
+        </div>
+    </div>
+
     <div id="side-cart" class="cart-sidebar">
         <div class="cart-header">
             <h3> Tu Pedido </h3>
@@ -823,12 +837,35 @@
             document.getElementById("modalReserva").style.display = "none";
         }
 
+        function cerrarReservaSuccess() {
+            document.getElementById("reserva-success").style.display = "none";
+        }
+
         window.onclick = function(event) {
             let modal = document.getElementById("modalReserva");
             if (event.target == modal) {
                 modal.style.display = "none";
             }
         }
+
+        document.getElementById('formReserva').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const Nombre = this.querySelector('input[type="text"]').value;
+            const Fecha = this.querySelector('input[type="date"]').value;
+            const Hora = this.querySelector('input[type="time"]').value;
+            const personas = this.querySelector('input[type="number"]').value;
+
+            document.getElementById('res-nombre-confirm').innerText = Nombre
+            document.getElementById('res-fecha-confirm').innerText = Fecha;
+            document.getElementById('res-hora-confirm').innerText = Hora;
+            document.getElementById('res-personas-confirm').innerText = personas;
+
+            cerrarReserva();
+            document.getElementById('reserva-success').style.display = 'flex';
+
+            this.reset();
+        })
         
     </script>
 

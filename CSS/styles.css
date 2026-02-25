@@ -553,13 +553,13 @@ header::after {
     cursor: pointer;
 }
 
-.header-formulario h3 {
+.headerFormulario h3 {
     color: greenyellow;
     text-transform: uppercase;
     margin-bottom: 5px;
 }
 
-.header-formulario p {
+.headerFormulario p {
     color: #ccc;
     margin-bottom: 25px;
     font-size: 0.9rem;
@@ -736,6 +736,7 @@ header::after {
     text-align: center;
     border: 2px solid greenyellow;
     width: 320px;
+    color: white;
 }
 
 .check-icon {
