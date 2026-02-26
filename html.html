@@ -649,7 +649,7 @@
                                     <span class="nombre-item"> Caseros </span>
                                 </div>
                                 <div class="item-menu-tarjeta">
-                                    <span class="nombre-item"> Polcito Uruguayo </span>
+                                    <span class="nombre-item"> Polvito Uruguayo </span>
                                 </div>
                                 <div class="item-menu-tarjeta">
                                     <span class="nombre-item"> Tarta de tres chocolates </span>
@@ -701,7 +701,7 @@
             <form id="formReserva">
                 <div class="grupo-input">
                     <label> Nombre Completo </label>
-                    <input type="text" placeholder="Ej: Pene" required>
+                    <input type="text" placeholder="Ej: Romarey Mateo" required>
                 </div>
 
                 <div class="fila-input">
@@ -848,17 +848,45 @@
             }
         }
 
+        const inputFecha = document.querySelector('input[type="date"]');
+        if (inputFecha) {
+            const hoy = new Date().toISOString().split("T")[0];
+            inputFecha.setAttribute('min', hoy);
+        }
+
         document.getElementById('formReserva').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const Nombre = this.querySelector('input[type="text"]').value;
-            const Fecha = this.querySelector('input[type="date"]').value;
-            const Hora = this.querySelector('input[type="time"]').value;
+            const nombre = this.querySelector('input[type="text"]').value;
+            const fecha = this.querySelector('input[type="date"]').value;
+            const hora = this.querySelector('input[type="time"]').value;
             const personas = this.querySelector('input[type="number"]').value;
 
-            document.getElementById('res-nombre-confirm').innerText = Nombre
-            document.getElementById('res-fecha-confirm').innerText = Fecha;
-            document.getElementById('res-hora-confirm').innerText = Hora;
+            const fechaObjeto = new Date(fecha);
+            const diaSemana = new Date(fecha).getUTCDay();
+            if (diaSemana === 0 || diaSemana === 1) {
+                alert("¡Lo sentimos! Piscolabis Campitos cierra los lunes y domingos por descanso del personal.");
+                return;
+            }
+
+            if (hora < "20:00" || hora > "22:00") {
+                alert("El horario de reservas es exclusivamente de 20:00 a 22:00.");
+                return;
+            }
+
+            const ahora = new Date(); 
+            const fechaReserva = new Date(fecha + "T" + hora);
+            const diferenciaMs = fechaReserva - ahora;
+            const diferenciaHoras = diferenciaMs / (1000 * 60 * 60);
+            
+            if (diferenciaHoras < 2) {
+                alert("Lo sentimos, las reservas deben realizarse con al menos 2 horas de antelación.");
+                return;
+            }
+
+            document.getElementById('res-nombre-confirm').innerText = nombre
+            document.getElementById('res-fecha-confirm').innerText = fecha;
+            document.getElementById('res-hora-confirm').innerText = hora;
             document.getElementById('res-personas-confirm').innerText = personas;
 
             cerrarReserva();
